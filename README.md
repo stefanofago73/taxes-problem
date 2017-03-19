@@ -20,9 +20,7 @@ new Sale()
    .destroy();
 ```
 
-##  Other Details ##
-
-The progect was coded with Java 1.7 and automated with Maven 3.3.9
+##  Item Format ##
 
 The input come from file and it's supposed the following format:
 
@@ -32,7 +30,21 @@ There is a simple check about this format
 (at least 4 elements and the presence of "at" term).
 
 
-The program is not thread-safe, also if main abstractions are quite immutable
+##  Compile & Build ##
+
+The project was coded with Java 1.7 and automated with Maven 3.3.9
+
+
+##  Other Details ##
+
+The program is not thread-safe, also if main abstractions are quite immutable.
+
+I've used BigDecimal but more interesting is to use Joda-Money  or Java-Money 
+Specification (it's also a matter of performances)
+
+
+##  Reasoning about FP ##
+
 If you consider the task as a trasformation of a stream of items starting from
 a list of String, passing to list of BasketItem and then arriving to a list of
 PurchasedItem, it's possible to adopt a fully functional style where, at the end,
