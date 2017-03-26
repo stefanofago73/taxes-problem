@@ -50,3 +50,29 @@ a list of String, passing to list of BasketItem and then arriving to a list of
 PurchasedItem, it's possible to adopt a fully functional style where, at the end,
 the Receipt is a consumer of PurchasedItem. This way of thinking also had impact 
 on code done in more classical OOP.
+
+
+```java
+
+  String[] data = { 
+  		 "1 imported bottle of perfume at 27.99", 
+		 "1 bottle of perfume at 18.99",
+		 "1 packet of headache pills at 9.75", 
+		 "1 box of imported chocolates at 11.25"
+		};
+
+  Receipt receipt = new Receipt();
+		
+	Arrays
+	  .stream(data)
+	    .map(fromStringToItem)
+	    .map(fromItemToPurchased)
+        .forEach(receipt);
+		    
+	System.out.println(receipt.print());
+	
+```
+
+
+Also if elegant, the real code can be really different since you need to consider
+error management and special cases: so the functional model can change
