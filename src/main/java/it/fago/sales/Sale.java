@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import it.fago.sales.calculator.TaxesCalculator;
 import it.fago.sales.classification.ItemClassification;
 import it.fago.sales.problem.impl.ProblemItemClassificaton;
+import it.fago.sales.rounding.RoundingPolicy;
 
 public class Sale {
 	//

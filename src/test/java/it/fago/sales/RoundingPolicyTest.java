@@ -1,6 +1,8 @@
 package it.fago.sales;
 
 import static org.junit.Assert.assertTrue;
+import it.fago.sales.problem.impl.ProblemRoundingPolicy;
+import it.fago.sales.rounding.RoundingPolicy;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -8,8 +10,6 @@ import java.util.Arrays;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import it.fago.sales.rounding.ProblemRoundingPolicy;
 
 public class RoundingPolicyTest {
 	//
@@ -19,9 +19,11 @@ public class RoundingPolicyTest {
 
 	@Before
 	public void setUp() throws Exception {
-		data = new BigDecimal[] { new BigDecimal("0.50"), new BigDecimal("0.5625"), new BigDecimal("7.1250"),
+		data = new BigDecimal[] { new BigDecimal("0.50"),
+				new BigDecimal("0.5625"), new BigDecimal("7.1250"),
 				new BigDecimal("1.499") };
-		expected = new BigDecimal[] { new BigDecimal("0.5"), new BigDecimal("0.6"), new BigDecimal("7.15"),
+		expected = new BigDecimal[] { new BigDecimal("0.5"),
+				new BigDecimal("0.6"), new BigDecimal("7.15"),
 				new BigDecimal("1.5") };
 	}
 
@@ -38,7 +40,9 @@ public class RoundingPolicyTest {
 		BigDecimal tmp = null;
 		for (int i = 0; i < len; i++) {
 			tmp = policy.round(data[i]);
-			assertTrue(String.format("Found %s expected: %s ", tmp, expected[i]), tmp.equals(expected[i]));
+			assertTrue(
+					String.format("Found %s expected: %s ", tmp, expected[i]),
+					tmp.equals(expected[i]));
 		}
 
 	}
@@ -55,7 +59,8 @@ public class RoundingPolicyTest {
 		BigDecimal tmp = null;
 		for (int i = 0; i < len; i++) {
 			tmp = policy.round(data[i]);
-			assertTrue(String.format("Found %s expected: %s ", tmp, data[i]), tmp.equals(data[i]));
+			assertTrue(String.format("Found %s expected: %s ", tmp, data[i]),
+					tmp.equals(data[i]));
 		}
 	}
 

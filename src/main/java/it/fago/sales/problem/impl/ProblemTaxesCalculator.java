@@ -7,8 +7,8 @@ import java.util.List;
 
 import it.fago.sales.BasketItem;
 import it.fago.sales.PurchasedItem;
-import it.fago.sales.RoundingPolicy;
 import it.fago.sales.calculator.TaxesCalculator;
+import it.fago.sales.rounding.RoundingPolicy;
 
 public class ProblemTaxesCalculator implements TaxesCalculator {
 
